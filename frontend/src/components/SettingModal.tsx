@@ -35,6 +35,12 @@ function InnerSettingModal({ isOpen, onClose }: Props): JSX.Element {
   const [language, setLanguage] = useState(
     currentSettings[ArgConfigType.LANGUAGE],
   );
+  const [apiKey, setApiKey] = useState(
+    currentSettings[ArgConfigType.LLM_API_KEY],
+  );
+  const [baseUrl, setBaseUrl] = useState(
+    currentSettings[ArgConfigType.LLM_BASE_URL],
+  );
 
   const { t } = useTranslation();
 
@@ -57,6 +63,8 @@ function InnerSettingModal({ isOpen, onClose }: Props): JSX.Element {
       [ArgConfigType.LLM_MODEL]: model ?? inputModel,
       [ArgConfigType.AGENT]: agent,
       [ArgConfigType.LANGUAGE]: language,
+      [ArgConfigType.LLM_API_KEY]: apiKey,
+      [ArgConfigType.LLM_BASE_URL]: baseUrl,
     });
     onClose();
   };
@@ -108,6 +116,20 @@ function InnerSettingModal({ isOpen, onClose }: Props): JSX.Element {
             </AutocompleteItem>
           )}
         </Autocomplete>
+        <input
+          className="bg-neutral-700 rounded-small p-2 mt-2"
+          placeholder={t(I18nKey.CONFIGURATION$API_KEY_INPUT_PLACEHOLDER)}
+          value={apiKey}
+          onChange={(e) => setApiKey(e.target.value)}
+          aria-label={t(I18nKey.CONFIGURATION$API_KEY_INPUT_LABEL)}
+        />
+        <input
+          className="bg-neutral-700 rounded-small p-2 mt-2"
+          placeholder={t(I18nKey.CONFIGURATION$BASE_URL_INPUT_PLACEHOLDER)}
+          value={baseUrl}
+          onChange={(e) => setBaseUrl(e.target.value)}
+          aria-label={t(I18nKey.CONFIGURATION$BASE_URL_INPUT_LABEL)}
+        />
         <Autocomplete
           defaultItems={supportedAgents.map((v: string) => ({
             label: v,

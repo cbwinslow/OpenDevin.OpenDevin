@@ -1,0 +1,2 @@
+- Consider implementing validation for API key and base URL fields to provide immediate feedback.
+- Add unit tests for the new OpenRouterAgent behavior.

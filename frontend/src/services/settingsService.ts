@@ -24,12 +24,16 @@ const DISPLAY_MAP: { [key: string]: string } = {
   LLM_MODEL: "model",
   AGENT: "agent",
   LANGUAGE: "language",
+  LLM_API_KEY: "api key",
+  LLM_BASE_URL: "base url",
 };
 
 const DEFAULT_SETTINGS: Settings = {
   LLM_MODEL: "gpt-3.5-turbo",
   AGENT: "MonologueAgent",
   LANGUAGE: "en",
+  LLM_API_KEY: "",
+  LLM_BASE_URL: "https://openrouter.ai/api/v1",
 };
 
 const getSettingOrDefault = (key: string): string => {
@@ -41,6 +45,8 @@ export const getCurrentSettings = (): Settings => ({
   LLM_MODEL: getSettingOrDefault("LLM_MODEL"),
   AGENT: getSettingOrDefault("AGENT"),
   LANGUAGE: getSettingOrDefault("LANGUAGE"),
+  LLM_API_KEY: getSettingOrDefault("LLM_API_KEY"),
+  LLM_BASE_URL: getSettingOrDefault("LLM_BASE_URL"),
 });
 
 // Function to merge and update settings

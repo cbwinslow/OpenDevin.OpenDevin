@@ -167,6 +167,18 @@
     "es": "Idioma",
     "tr": "Dil"
   },
+  "CONFIGURATION$API_KEY_INPUT_LABEL": {
+    "en": "API Key"
+  },
+  "CONFIGURATION$API_KEY_INPUT_PLACEHOLDER": {
+    "en": "OpenRouter API key"
+  },
+  "CONFIGURATION$BASE_URL_INPUT_LABEL": {
+    "en": "Base URL"
+  },
+  "CONFIGURATION$BASE_URL_INPUT_PLACEHOLDER": {
+    "en": "https://openrouter.ai/api/v1"
+  },
   "CONFIGURATION$MODAL_CLOSE_BUTTON_LABEL": {
     "en": "Close",
     "zh-CN": "关闭",
