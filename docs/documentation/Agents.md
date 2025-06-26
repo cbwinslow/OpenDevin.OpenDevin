@@ -33,7 +33,7 @@ Short term memory is stored as a Monologue object and the model can condense it 
 
 `_initialize`: Utilizes the `INITIAL_THOUGHTS` list to give the agent a context for its capabilities and how to navigate the `/workspace`
 
-`step`: Modifies the current state by adding the most rescent actions and observations, then prompts the model to think about its next action to take. 
+`step`: Modifies the current state by adding the most rescent actions and observations, then prompts the model to think about its next action to take.
 
 `search_memory`: Uses `VectorIndexRetriever` to find related memories within the long term memory.
 
@@ -91,6 +91,13 @@ The Code Act Agent is a minimalist agent. The agent works by passing the model a
 ### Methods:
 `__init__`: Initializes an agent with `llm` and a list of messages `List[Mapping[str, str]]`
 
-`step`: First, gets messages from state and then compiles them into a list for context. Next, pass the context list with the prompt to get the next command to execute. Finally, Execute command if valid, else return `AgentEchoAction(INVALID_INPUT_MESSAGE)` 
+`step`: First, gets messages from state and then compiles them into a list for context. Next, pass the context list with the prompt to get the next command to execute. Finally, Execute command if valid, else return `AgentEchoAction(INVALID_INPUT_MESSAGE)`
 
 `search_memory`: Not yet implemented
+## OpenRouter Agent:
+
+### Description:
+The OpenRouter Agent is a coordinator that decides which specialist agent should handle a task. It currently chooses between the Monologue, SWE, Planner, and CodeAct agents based on keywords in the request. Each sub-agent is backed by its own LLM model routed through OpenRouter for best results.
+
+### Actions:
+Depends on the chosen sub-agent. The OpenRouter agent delegates `step` and `search_memory` to the underlying agent.

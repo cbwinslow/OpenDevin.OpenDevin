@@ -116,6 +116,7 @@ After completing the MVP, the team will focus on research in various areas, incl
 * OpenDevin will issue many prompts to the LLM you configure. Most of these LLMs cost money--be sure to set spending limits and monitor usage.
 * OpenDevin runs `bash` commands within a Docker sandbox, so it should not affect your machine. But your workspace directory will be attached to that sandbox, and files in the directory may be modified or deleted.
 * Our default Agent is currently the MonologueAgent, which has limited capabilities, but is fairly stable. We're working on other Agent implementations, including [SWE Agent](https://swe-agent.com/). You can [read about our current set of agents here](./docs/documentation/Agents.md).
+A new **OpenRouterAgent** routes tasks to specialist agents and LLM models via OpenRouter.
 
 ## 🚀 Get Started
 The easiest way to run OpenDevin is inside a Docker container.
