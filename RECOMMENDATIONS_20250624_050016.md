@@ -1,0 +1,3 @@
+- Expand the Astro UI with authentication and agent configuration forms
+- Implement backend endpoints to integrate `RagBuilder` for dataset ingestion
+- Consider Dockerizing the Astro app for easy deployment
