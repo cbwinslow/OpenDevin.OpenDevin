@@ -11,6 +11,10 @@ export const settingsSlice = createSlice({
     [ArgConfigType.AGENT]: localStorage.getItem(ArgConfigType.AGENT) || "",
     [ArgConfigType.LANGUAGE]:
       localStorage.getItem(ArgConfigType.LANGUAGE) || "en",
+    [ArgConfigType.LLM_API_KEY]:
+      localStorage.getItem(ArgConfigType.LLM_API_KEY) || "",
+    [ArgConfigType.LLM_BASE_URL]:
+      localStorage.getItem(ArgConfigType.LLM_BASE_URL) || "",
   } as { [key: string]: string },
   reducers: {
     setByKey: (state, action) => {

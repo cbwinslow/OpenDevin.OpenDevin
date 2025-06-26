@@ -24,6 +24,10 @@ numpy = "*"
 json-repair = "*"
 playwright = "*"
 pexpect = "*"
+langchain = "*"
+langgraph = "*"
+langsmith = "*"
+ollama = "*"
 
 [tool.poetry.group.llama-index.dependencies]
 llama-index = "*"

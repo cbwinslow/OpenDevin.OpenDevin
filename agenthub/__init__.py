@@ -7,6 +7,12 @@ from . import monologue_agent  # noqa: E402
 from . import codeact_agent  # noqa: E402
 from . import planner_agent  # noqa: E402
 from . import SWE_agent      # noqa: E402
+from . import openrouter_agent  # noqa: E402
 
-__all__ = ['monologue_agent', 'codeact_agent',
-           'planner_agent', 'SWE_agent']
+__all__ = [
+    'monologue_agent',
+    'codeact_agent',
+    'planner_agent',
+    'SWE_agent',
+    'openrouter_agent',
+]
