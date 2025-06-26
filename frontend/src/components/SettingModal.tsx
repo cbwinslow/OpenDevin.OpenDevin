@@ -120,9 +120,18 @@ function InnerSettingModal({ isOpen, onClose }: Props): JSX.Element {
           className="bg-neutral-700 rounded-small p-2 mt-2"
           placeholder={t(I18nKey.CONFIGURATION$API_KEY_INPUT_PLACEHOLDER)}
           value={apiKey}
-          onChange={(e) => setApiKey(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            setApiKey(value);
+            validateApiKey(value);
+          }}
           aria-label={t(I18nKey.CONFIGURATION$API_KEY_INPUT_LABEL)}
         />
+        {apiKeyError && (
+          <div className="text-red-500 text-sm mt-1">
+            {apiKeyError}
+          </div>
+        )}
         <input
           className="bg-neutral-700 rounded-small p-2 mt-2"
           placeholder={t(I18nKey.CONFIGURATION$BASE_URL_INPUT_PLACEHOLDER)}
