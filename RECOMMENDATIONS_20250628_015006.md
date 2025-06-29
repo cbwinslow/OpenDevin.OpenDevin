@@ -1,0 +1,2 @@
+- Pin other critical dependencies to avoid unexpected upgrades.
+- Add a CI workflow to validate dependency versions and run tests automatically.
