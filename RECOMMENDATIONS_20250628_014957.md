@@ -1,0 +1,2 @@
+- Document Node.js version requirement in the README or package.json.
+- Consider referencing `npm run preview` for a production preview step.
