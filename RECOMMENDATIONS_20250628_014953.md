@@ -1,0 +1,1 @@
+Consider adding evaluation/SWE-bench/scripts/generate_opendevin_predictions.py to the repository. Without it, instructions referencing run_agent and generate_predictions cannot be implemented or tested.
