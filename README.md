@@ -220,6 +220,23 @@ Please note that the selection of these technologies is in progress, and additio
 
 An alternative web interface built with Astro, React, and Tailwind can be found in the `astro-app` directory.
 
+### Local Development
+
+The frontend lives in `astro-app` and depends on Node.js.
+To start it locally, install dependencies and launch the development server:
+
+```bash
+cd astro-app
+npm install
+npm run dev
+```
+
+For a production build use:
+
+```bash
+npm run build
+```
+
 
 <p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
     <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
