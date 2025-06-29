@@ -1,0 +1,1 @@
+- Consider integrating these stubbed dependencies into a fixtures module to reuse across tests.
