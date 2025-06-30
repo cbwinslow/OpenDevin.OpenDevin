@@ -1,0 +1,1 @@
+- Consider placing the langchain stubs used in `test_rag_builder.py` into a shared fixtures module for reuse in other tests.

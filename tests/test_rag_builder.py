@@ -2,6 +2,9 @@ import sys
 from types import ModuleType, SimpleNamespace
 from pathlib import Path
 
+# Ensure project root is on the import path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 
 class DummyEmbeddings:
     def __init__(self, *_, **__):
@@ -58,7 +61,7 @@ sys.modules['langchain.vectorstores'] = langchain_vectorstores
 sys.modules['langchain.vectorstores.chroma'] = langchain_chroma
 
 
-def test_index_files_and_query(tmp_path):
+def build_rag(tmp_path):
     from opendevin.rag.builder import RagBuilder
 
     rb = RagBuilder(persist_dir=str(tmp_path / 'store'))
@@ -69,7 +72,15 @@ def test_index_files_and_query(tmp_path):
     f2.write_text('delta epsilon zeta')
 
     rb.index_files([f1, f2])
+    return rb
 
-    assert rb.store.docs
+
+def test_index_files(tmp_path):
+    rb = build_rag(tmp_path)
+    assert len(rb.store.docs) == 2
+
+
+def test_query(tmp_path):
+    rb = build_rag(tmp_path)
     results = rb.query('alpha', k=1)
     assert results == ['alpha beta gamma']
