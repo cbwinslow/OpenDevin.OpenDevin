@@ -1,0 +1,1 @@
+- Consider adding a dedicated "Agents" section in the main README to outline all available agents with links to their READMEs for easier navigation.
