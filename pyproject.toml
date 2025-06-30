@@ -24,10 +24,10 @@ numpy = "*"
 json-repair = "*"
 playwright = "*"
 pexpect = "*"
-langchain = "==0.2.2" # tested version 0.2.2
-langgraph = "==0.0.22" # tested version 0.0.22
-langsmith = "==0.0.63" # tested version 0.0.63
-ollama = "==0.1.7" # tested version 0.1.7
+langchain = "==0.3.26" # tested version 0.3.26
+langgraph = "==0.5.0" # tested version 0.5.0
+langsmith = "==0.4.4" # tested version 0.4.4
+ollama = "==0.5.1" # tested version 0.5.1
 
 [tool.poetry.group.llama-index.dependencies]
 llama-index = "*"

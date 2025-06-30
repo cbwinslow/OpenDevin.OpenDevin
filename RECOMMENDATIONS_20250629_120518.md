@@ -1,0 +1,1 @@
+- Keep poetry.lock in sync when updating dependencies.
